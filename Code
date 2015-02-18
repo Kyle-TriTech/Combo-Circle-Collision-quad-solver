@@ -1,0 +1,98 @@
+//Kyle Howell 2/9/2015 Quadratic Formula Program
+#include <Windows.h>
+#include <cmath>
+#include <iostream>
+#include <math.h>
+using namespace std;
+double A, B, C, X1, X2, answer, User, choice, h1, k1, r1, h2, k2, r2,d;
+int main()
+{	Start:
+	system("cls");//Giving this user the chocie
+	cout<<"Would you like to use the Quadratic Formula? Or find if two circles Collide? (1 for Quad Form, 2 for Circles)\n\n";
+	cin>> choice;
+	//Different routes
+	if (choice == 1)
+			goto Start2;
+	else if (choice == 2);
+		goto Start3;
+		return 0;
+
+Start2:
+		//For the quad formula
+		cout<<"You chose to use the Quadratic formula/n/n";
+	cout<<"Quadratic equation is in the form\n";
+	cout<<"x1=(-B+sqrt(B*B-4*A*C))/(2*A)\n";
+	cout<<"x2=(-B-sqrt(B*B-4*A*C))/(2*A)\n\n";
+	//Asking for input
+	cout<<"Please enter the A value:\n";
+	cin>> A;
+
+	cout<<"\nPlease enter the B value:\n";
+	cin>>B;
+
+	cout<<"\nPlease enter the C value:\n";
+	cin>>C;
+	cout<<"\n\n";
+	//showing the answer
+	answer= ((B*B-4*A*C));
+
+	if ((B*B-4*A*C)>0)
+	{	//calculations
+		X1 = (-B+sqrt(B*B-4*A*C))/(2*A);
+		X2 = (-B-sqrt(B*B-4*A*C))/(2*A);
+		cout<<"The solutions are "<<X1<<" And " <<X2<<"\n\n";
+	}
+	else if (((B*B-4*A*C)) == 0)
+	{
+		X1 = (-B+sqrt(B*B-4*A*C))/(2*A);
+		cout<<"The Solution is "<<X1;
+	}
+	else
+		cout<<"There are no real Solutions\n";
+	//Asking user to run program again
+	cout<<"Would you like to run this again? 1=Yes, 0=No\n";
+	cin>>User;
+		if (User == 1)
+			goto Start;
+		else if (User == 0)
+		{ 
+			cout<<("\n Good Luck with Math!\n");
+		}
+		return 0;
+
+Start3:
+		//for if two circles collide
+		cout<<"You chose to find if two circles collide\n";
+		cout<<"Finding if two cirlces collide is in the form\n";
+		cout<<"C1: (x-4)^2 + y^2 = r^2\n";
+		//Asking for input
+		cout<<"Plaese enter the X value for Circle 1:\n";
+		cin>>h1;
+
+		cout<<"Please enter the Y value for Circle 1:\n";
+		cin>>k1;
+
+		cout<<"Please enter the Radius for Circle 1:\n";
+		cin>>r1;
+
+		cout<<"Plaese enter the X value for Circle 2:\n";
+		cin>>h2;
+
+		cout<<"Please enter the Y value for Circle 2:\n";
+		cin>>k2;
+
+		cout<<"Please enter the Radius for Circle 2:\n";
+		cin>>r2;
+
+		cout<<"The Sum of the Radii is: "<<r1+r2<<"\n";
+		//Caculations
+		d = sqrt((h2-h1)*(h2-h1)+(k2-k1)*(k2-k1));
+		cout<<"The distance between centers is: "<<d<<"\n";
+		//Telling if the user circles collide or not
+		if (d <=r1+r2)
+			cout<<"\nCollision Occurs\n";
+		else
+			cout<<"\nNocollision\n";
+		system("pause");
+
+}
